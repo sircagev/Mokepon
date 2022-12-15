@@ -30,6 +30,18 @@ let spanAtaqueJugador
 let vidaJugador = 5
 let vidaEnemigo = 5
 
+class Mokepon{
+    constructor(nombre, foto, vida){
+        this.nombre = nombre
+        this.foto = foto
+        this.vida = vida
+    }
+}
+
+let hipodoge = new Mokepon('Hipodoge','images/Hipodoge.png',5)
+let capipepo = new Mokepon('Capipepo','images/Capipepo.png',5)
+let ratigueya = new Mokepon('Ratigueya','images/Ratigueya.png',5)
+
 function iniciarJuego(){
     
     seleccionarAtaque.style.display = 'none'
