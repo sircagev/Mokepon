@@ -89,16 +89,16 @@ class Mokepon{
     }
 }
 
-let hipodoge = new Mokepon('Hipodoge','./images/Hipodoge.png',5,'./images/Hipodoge.png')
-let capipepo = new Mokepon('Capipepo','./images/Capipepo.png',5,'./images/Capipepo.png')
-let ratigueya = new Mokepon('Ratigueya','./images/Ratigueya.png',5,'./images/Ratigueya.png')
+let hipodoge = new Mokepon('Hipodoge','./images/Hipodoge.png',5,'./images/Cabezahipodoge.png')
+let capipepo = new Mokepon('Capipepo','./images/Capipepo.png',5,'./images/Cabezacapipepo.png')
+let ratigueya = new Mokepon('Ratigueya','./images/Ratigueya.png',5,'./images/Cabezaratigueya.png')
 let langostelvis = new Mokepon('Langostelvis', './images/Langostelvis.png',5,'./images/Langostelvis.png')
 let tucapalma = new Mokepon('Tucapalma','./images/Tucapalma.png',5,'./images/Tucapalma.png')
 let pydos = new Mokepon('Pydos', './images/Pydos.png',5, './images/Pydos.png')
 
-let hipodogeEnemigo = new Mokepon('Hipodoge','./images/Hipodoge.png',5,'./images/Hipodoge.png')
-let capipepoEnemigo = new Mokepon('Capipepo','./images/Capipepo.png',5,'./images/Capipepo.png')
-let ratigueyaEnemigo = new Mokepon('Ratigueya','./images/Ratigueya.png',5,'./images/Ratigueya.png')
+let hipodogeEnemigo = new Mokepon('Hipodoge','./images/Hipodoge.png',5,'./images/Cabezahipodoge.png')
+let capipepoEnemigo = new Mokepon('Capipepo','./images/Capipepo.png',5,'./images/Cabezacapipepo.png')
+let ratigueyaEnemigo = new Mokepon('Ratigueya','./images/Ratigueya.png',5,'./images/Cabezaratigueya.png')
 let langostelvisEnemigo = new Mokepon('Langostelvis', './images/Langostelvis.png',5,'./images/Langostelvis.png')
 let tucapalmaEnemigo = new Mokepon('Tucapalma','./images/Tucapalma.png',5,'./images/Tucapalma.png')
 let pydosEnemigo = new Mokepon('Pydos', './images/Pydos.png',5, './images/Pydos.png')
