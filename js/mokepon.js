@@ -443,16 +443,32 @@ function moverArriba(){
     mascotaJugadorObjeto.velocidady = -5
 }
 
+function moverArriba2(){
+    mascotaJugadorObjeto.y = mascotaJugadorObjeto.y -5
+}
+
 function moverIzquierda(){
     mascotaJugadorObjeto.velocidadx = -5
+}
+
+function moverIzquierda2(){
+    mascotaJugadorObjeto.x = mascotaJugadorObjeto.x -5
 }
 
 function moverAbajo(){
     mascotaJugadorObjeto.velocidady = 5
 }
 
+function moverAbajo2(){
+    mascotaJugadorObjeto.y = mascotaJugadorObjeto.y + 5
+}
+
 function moverDerecha(){
     mascotaJugadorObjeto.velocidadx = 5
+}
+
+function moverDerecha2(){
+    mascotaJugadorObjeto.x = mascotaJugadorObjeto.x + 5
 }
 
 function detenerMovimiento(){
