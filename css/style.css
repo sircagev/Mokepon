@@ -60,7 +60,7 @@ input:checked + label{
     border: 3px solid white;
     color: white;
     font-family:Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
-    margin-top: 15px;
+    margin: 15px;
 }
 
 #seleccionar-ataque{
@@ -110,7 +110,24 @@ input:checked + label{
     align-items: center;
 }
 
-@media(max-width:360px){
+#ver-mapa{
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+#ver-mapa button{
+    width: 100px;
+    height: 40px;
+    border-radius: 20px;
+    background-color: transparent;
+    border: 3px solid white;
+    color: white;
+    font-family:Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    margin-top: 5px;
+}
+
+@media(max-width:560px){
     .tarjetas{
         flex-direction: column;
     }
