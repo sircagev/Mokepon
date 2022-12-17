@@ -52,6 +52,7 @@ mapaBack.src = './images/mokemap.png'
 let alturaQueBuscamos
 let anchoDelMapa = window.innerWidth - 20
 const anchoMaximoMapa = 450
+let arrayAleatorio = []
 
 if(anchoDelMapa > anchoMaximoMapa){
     anchoDelMapa = anchoMaximoMapa - 20
@@ -204,7 +205,6 @@ pydosEnemigo.ataques.push(
 mokepones.push(hipodoge, capipepo, ratigueya, langostelvis, tucapalma,pydos)
 
 function iniciarJuego(){
-    
     seleccionarAtaque.style.display = 'none'
     seccionReiniciar.style.display = 'none'
     sectionVerMapa.style.display = 'none'
@@ -231,8 +231,7 @@ function iniciarJuego(){
     botonReiniciar.addEventListener('click', reiniciar)
 }
 
-function seleccionarMascota(){
-    
+function seleccionarMascota(){    
     seleccionarMas.style.display = 'none'
     sectionVerMapa.style.display = 'flex' 
     if(inputHipodoge.checked){
@@ -257,7 +256,6 @@ function seleccionarMascota(){
         alert('Por favor selecciona tu mascota')
     }
     
-
     extraerAtaques(mascotaJugador)
     iniciarMapa()
 }
@@ -301,7 +299,12 @@ function secuenciaAtaque(){
                 boton.style.background = '#112f58'
                 boton.disabled = true
             }
-            ataqueAleatorioEnemigo()
+            console.log('ataquesJugador',ataqueJugador)
+            if(ataqueJugador.length == 5){
+                ataqueAleatorioEnemigo()
+                combate()
+            }  
+            console.log('Ataques enemigo', ataquesMokeponEnemigo,arrayAleatorio,ataqueEnemigo)     
         })
     })
 }
@@ -317,22 +320,34 @@ function seleccionarMascotaEnemigo(enemigo){
 }
 
 function ataqueAleatorioEnemigo(){
-    console.log('Ataques enemigo', ataquesMokeponEnemigo)
-    let ataqueAleatorio = aleatorio(0,ataquesMokeponEnemigo.length -1)
-    if(ataqueAleatorio == 0 || ataqueAleatorio == 1){
-        ataqueEnemigo.push("FUEGO")
-    }else if(ataqueAleatorio == 3 || ataqueAleatorio == 4){
-        ataqueEnemigo.push("AGUA")
-    }else{
-        ataqueEnemigo.push("TIERRA")
-    }
-    iniciarPelea()
+    llenarArrayAleatorio()
+    
+    for (let i = 0; i < arrayAleatorio.length; i++) {
+        if(ataquesMokeponEnemigo[arrayAleatorio[i]].nombre == '🔥'){
+            ataqueEnemigo.push("FUEGO")
+        }else if(ataquesMokeponEnemigo[arrayAleatorio[i]].nombre == '💧'){
+            ataqueEnemigo.push("AGUA")
+        }else{
+            ataqueEnemigo.push("TIERRA")
+        }
+   }
 }
 
-function iniciarPelea(){
-    if(ataqueJugador.length == 5){
-        combate()
+function llenarArrayAleatorio(){
+    while (arrayAleatorio.length<ataquesMokeponEnemigo.length) {
+        let ataqueAleatorio = aleatorio(0,ataquesMokeponEnemigo.length -1)
+        let existe = false
+        for (let i = 0; i < arrayAleatorio.length; i++) {
+            if (arrayAleatorio[i] == ataqueAleatorio) {
+                existe = true;
+                break;
+            }
+        }
+        if(!existe){
+            arrayAleatorio.push(ataqueAleatorio) 
+        }
     }
+    return arrayAleatorio
 }
 
 function indexAmbosOponentes(jugador, enemigo){
